@@ -1,0 +1,19 @@
+{if $wa->user()->getId()}
+<h1 class="title">Заявки на вывод</h1>
+	<table class="table"> 
+		<th>Дата</th>
+		<th>Платежная система</th>
+		<th>Сумма</th>
+		<th>Статус</th>
+            {foreach from=$operations item=r}
+		{if $r['summ']}
+			<tr>
+				<td>{$r['date']|date_format:"%d.%m.%Y - %R"}</td>
+				<td>{$r['merchant_name']}</td>
+				<td>{$r['summ']} $</td>
+				<td>{$r['status_name']}</td>
+			</tr>
+		{/if}
+            {/foreach}
+	</table>
+{/if}

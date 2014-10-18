@@ -1,0 +1,17 @@
+	<h1>[`Guestbook`]</h1>
+	{if $wa->userId()}
+	<form method="post" action="">
+		[`Name`]:<br />
+		<input name="name" type="text"><br />
+		[`Message`]:<br />
+		<textarea rows="4" cols="70" name="text"></textarea><br />
+		<input type="submit" value="[`Post`]">
+	</form>
+	{/if}
+	{foreach from=$records item=r}
+	<div class="post">
+		<h3>{$r.name|escape}</h3>
+		<span>{$r.datetime|wa_datetime}</span>
+		<p>{$r.text|escape|nl2br}</p>
+	</div>	
+	{/foreach}	

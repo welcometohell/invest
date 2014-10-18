@@ -1,0 +1,31 @@
+{if $wa->user()->getId()}
+<h1 class="title">Реферальная программа</h1>
+        <div class="alert alert-info">
+    <p>Ваша ссылка для приглашения:</p>
+    <p><a href="{$host}/lk/?ref={$wa->user()->getId()}">{$host}/lk/?ref={$wa->user()->getId()}</a></p>
+            </div>
+	<!--<p>Рекламные баннеры:</p>
+	<p>120x90: <img src="{$host}/wa-data/public/lk/themes/custom/img/banners/120-90_goodnews.bmp" width="100px" height=""></p>
+	<textarea cols="45" rows="5"><a href="{$host}/lk/?ref={$wa->user()->getId()}"><img src="{$host}/wa-data/public/lk/themes/custom/img/banners/120-90_goodnews.bmp" width="120px" height="90px"></a></textarea>
+	<p>240x400: <img src="{$host}/wa-data/public/lk/themes/custom/img/banners/240x400_goodnews.bmp" width="100px" ></p>
+	<textarea cols="45" rows="5"><a href="{$host}/lk/?ref={$wa->user()->getId()}"><img src="{$host}/wa-data/public/lk/themes/custom/img/banners/240x400_goodnews.bmp" width="240px" height="400px"></a></textarea>
+	<p>300x250: <img src="{$host}/wa-data/public/lk/themes/custom/img/banners/300x250_goodnews.bmp" width="100px" height=""></p>
+	<textarea cols="45" rows="5"><a href="{$host}/lk/?ref={$wa->user()->getId()}"><img src="{$host}/wa-data/public/lk/themes/custom/img/banners/300x250_goodnews.bmp" width="300px" height="250px"></a></textarea>
+    <p></p>-->
+    {if $referals}
+    <p>Ваши рефералы:</p>
+<table class="table">
+    <th>Логин</th>
+    <th>Сумма</th>
+    {foreach from=$referals item=r}
+        <tr>
+            <td>{$r.login}</td>
+            <td>{$r.summ}$</td>
+        </tr>
+    {/foreach}
+</table>
+        {/if}
+    {if $ref_balance}
+    <p class="register">Общий доход с реферальной системы: {$ref_balance.ref_balance}$</p>
+    {/if}
+{/IF}

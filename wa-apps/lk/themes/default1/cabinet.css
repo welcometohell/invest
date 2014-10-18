@@ -1,0 +1,455 @@
+/* REFS REFS REFS REFS REFS REFS REFS REFS REFS REFS REFS REFS REFS REFS REFS REFS REFS REFS REFS REFS REFS REFS REFS */
+
+.refs_link {
+padding-top:8px;
+font-family:arial;
+font-size:16px;
+font-weight:bold;
+color:#3EAA30;
+}
+
+.refs_stat {
+padding-top:15px;
+line-height:26px;
+font-family:arial;
+font-size:16px;
+font-weight:bold;
+color:#3EAA30;
+}
+
+.refs_who {
+padding-top:15px;
+font-family:arial;
+font-size:14px;
+font-weight:bold;
+color:#0088D5;
+}
+
+/* VYVESTI VYVESTI VYVESTI VYVESTI VYVESTI VYVESTI VYVESTI VYVESTI VYVESTI VYVESTI VYVESTI VYVESTI VYVESTI VYVESTI */
+
+.vyvesti_balance {
+padding-right:30px;
+font-family:arial;
+font-size:18px;
+font-weight:bold;
+color:#3EAA30;
+}
+
+.vyvesti_sum {
+font-family:arial;
+font-size:18px;
+font-weight:bold;
+color:#3EAA30;
+}
+
+.vyvesti_input {
+width:78px;
+height:26px;
+line-height:26px;
+border:none;
+padding-left:5px;
+padding-right:5px;
+font-family:arial;
+font-size:16px;
+font-weight:bold;
+color:#3EAA30;
+background:url('../images/vyvesti_input.png') no-repeat;
+}
+
+.vyvesti_button {
+display:block;
+width:125px;
+height:32px;
+line-height:32px;
+margin-left:15px;
+margin-bottom:5px;
+text-align:center;
+font-family:arial;
+font-size:19px;
+color:#333;
+text-decoration:none;
+background:url('../images/vyvesti_button.png');
+}
+
+.vyvesti_button:hover {
+text-decoration:underline;
+}
+
+.vyvesti_stat {
+width:650px;
+height:32px;
+padding-left:10px;
+font-family:arial;
+font-size:14px;
+font-weight:bold;
+color:#333333;
+background: url('../images/vyvesti_stat.png') no-repeat;
+}
+
+.vyvesti_stat_sum {
+/* width: 135px; */
+line-height:28px;
+/* padding-left:10px; */
+font-family: cuprum, sans-serif;
+font-size: 16px;
+/* font-weight:bold; */
+/* color:#009000; */
+}
+
+.vyvesti_stat_date {
+/* width: 150px; */
+/* text-align:center; */
+font-family: cuprum, sans-serif;
+font-size: 16px;
+/* font-weight:bold; */
+/* color:#009000; */
+}
+
+.vyvesti_stat_batch {
+/* width: 220px; */
+}
+
+.vyvesti_stat_batch a {
+font-family: cuprum,sans-serif;
+font-size: 16px;
+/* font-weight:bold; */
+/* color:#009000; */
+/* text-decoration:underline; */
+}
+
+.vyvesti_stat_batch_1 {
+/* width: 125px; */
+/* padding-left:30px; */
+font-family: cuprum,sans-serif;
+font-size: 16px;
+/* font-weight:bold; */
+color:#EC7600;
+/* background:url('../images/vyvesti_stat_batch_1.png') no-repeat; */
+}
+
+.vyvesti_stat_batch_2 {
+/* width:100px; */
+/* padding-left:30px; */
+font-family: cuprum, sans-serif;
+font-size: 16px;
+/* font-weight:bold; */
+color:#009000;
+/* background:url('../images/vyvesti_stat_batch_2.png') no-repeat; */
+}
+
+.vyvesti_info {
+padding-bottom:10px;
+font-family:arial;
+font-size:14px;
+color:#000000;
+}
+
+.vyvesti_error {
+margin-top:15px;
+margin-bottom:10px;
+line-height:40px;
+font-family:arial;
+font-size:16px;
+font-weight:bold;
+color:#ff0000;
+text-align:center;
+background:#FFE8E8;
+border:1px dashed #B00000;
+}
+
+.vyvesti_success {
+margin-top:15px;
+margin-bottom:10px;
+line-height:35px;
+font-family:arial;
+font-size:15px;
+font-weight:bold;
+color:#2F7113;
+text-align:center;
+background:#BAEFA3;
+border:1px dashed #2F7113;
+}
+
+/* POPOLNIT POPOLNIT POPOLNIT POPOLNIT POPOLNIT POPOLNIT POPOLNIT POPOLNIT POPOLNIT POPOLNIT POPOLNIT POPOLNIT */
+
+.popolnit_title {
+height:32px;
+line-height:32px;
+font-family:arial;
+font-size:18px;
+font-weight:bold;
+color:#3EAA30;
+}
+
+.popolnit_error {
+margin-top:15px;
+margin-bottom:10px;
+line-height:40px;
+font-family:arial;
+font-size:16px;
+font-weight:bold;
+color:#ff0000;
+text-align:center;
+background:#FFE8E8;
+border:1px dashed #B00000;
+}
+
+.popolnit_nomore {
+margin-top:15px;
+margin-bottom:10px;
+line-height:40px;
+font-family:arial;
+font-size:16px;
+font-weight:bold;
+color:#333333;
+text-align:center;
+background:#FAC741;
+border:1px dashed #F2872B;
+}
+
+.popolnit_info {
+line-height:22px;
+padding-bottom:20px;
+font-family:arial;
+font-size:14px;
+color:#000000;
+}
+
+.popolnit_input {
+width:300px;
+height:30px;
+line-height:30px;
+border:none;
+padding-left:30px;
+font-family:arial;
+font-size:16px;
+font-weight:bold;
+color:#77AF1B;
+background:url('../images/popolnit_input 1.png') no-repeat;
+}
+
+.popolnit_1 {
+display:inline-block;
+width:120px;
+height:30px;
+margin-right:5px;
+line-height:30px;
+text-align:center;
+font-family:arial;
+font-size:18px;
+color:#ffffff;
+text-decoration:none;
+background:url('../images/popolnit_1.png') no-repeat;
+}
+
+.popolnit_1:hover {
+text-decoration:underline;
+}
+
+.popolnit_2 {
+display:block;
+width:120px;
+height:30px;
+margin-right:5px;
+line-height:30px;
+text-align:center;
+font-family:arial;
+font-size:18px;
+color:#ffffff;
+text-decoration:none;
+background:url('../images/popolnit_2.png') no-repeat;
+}
+
+.popolnit_2:hover {
+text-decoration:underline;
+}
+
+.popolnit_stat {
+height:32px;
+padding-left:10px;
+font-family:arial;
+font-size:14px;
+font-weight:bold;
+color:#333333;
+background: url('../images/popolnit_stat.png') no-repeat;
+}
+
+.popolnit_stat_sum {
+/* width: 125px; */
+line-height:28px;
+padding-left:10px;
+font-family: cuprum;
+font-size: 16px;
+/* font-weight:bold; */
+/* color:#009000; */
+}
+
+.popolnit_stat_date {
+/* width: 145px; */
+font-family: cuprum;
+font-size: 16px;
+/* font-weight:bold; */
+/* color:#009000; */
+}
+
+.popolnit_stat_plan {
+width:100px;
+font-family:arial;
+font-size:14px;
+font-weight:bold;
+color:#009000;
+}
+
+.popolnit_stat_batch {
+/* width: 240px; */
+font-family: cuprum;
+font-size: 16px;
+/* font-weight:bold; */
+/* color:#009000; */
+}
+
+.popolnit_stat_batch_1 {
+/* width: 135px; */
+padding-left:30px;
+font-family: cuprum;
+font-size: 16px;
+/* font-weight:bold; */
+/* color: #AC8A01; */
+/* background:url('../images/vyvesti_stat_batch_1.png') no-repeat; */
+}
+
+.popolnit_stat_batch_2 {
+/* width: 135px; */
+padding-left:30px;
+font-family: cuprum;
+font-size: 16px;
+/* font-weight:bold; */
+color:#009000;
+/* background:url('../images/vyvesti_stat_batch_2.png') no-repeat; */
+}
+
+/* VKLADY VKLADY VKLADY VKLADY VKLADY VKLADY VKLADY VKLADY VKLADY VKLADY VKLADY VKLADY VKLADY VKLADY VKLADY VKLADY */
+
+.vklady_balance {
+font-family:arial;
+font-size:18px;
+font-weight:bold;
+color:#3EAA30;
+}
+
+.vklady_stat {
+padding-top:10px;
+padding-bottom:20px;
+font-family:arial;
+font-size:13px;
+font-weight:bold;
+color:#009000;
+}
+
+.vklady_error {
+margin-bottom:25px;
+line-height:40px;
+font-family:arial;
+font-size:16px;
+font-weight:bold;
+color:#ff0000;
+text-align:center;
+background:#FFE8E8;
+border:1px dashed #B00000;
+}
+
+.vklady_input {
+width:100px;
+height:30px;
+line-height:30px;
+border:none;
+padding-left:30px;
+font-family:arial;
+font-size:16px;
+font-weight:bold;
+color:#77AF1B;
+background:url('../images/popolnit_input 1.png') no-repeat;
+}
+
+.vklady_1 {
+display:inline-block;
+width:120px;
+height:30px;
+margin-left:10px;
+line-height:30px;
+text-align:center;
+font-family:arial;
+font-size:18px;
+color:#ffffff;
+text-decoration:none;
+background:url('../images/popolnit_1.png') no-repeat;
+}
+
+.vklady_1:hover {
+text-decoration:underline;
+}
+
+.vklady_date {
+padding-top:30px;
+padding-bottom:30px;
+text-align:center;
+font-family:arial;
+font-size:16px;
+font-weight:bold;
+color:#3EAA30;
+}
+
+.vklady_table {
+height:32px;
+font-family:arial;
+font-size:14px;
+font-weight:bold;
+color:#333333;
+background:url('../images/vklady_table.png') no-repeat;
+}
+
+.vklady_date_1 {
+/* width:220px; */
+padding-left:10px;
+height:32px;
+font-family: cuprum, sans-serif;
+font-size: 14px;
+/* font-weight:bold; */
+/* color:#009000; */
+}
+
+.vklady_sum_1 {
+/* width:170px; */
+font-family: cuprum, sans-serif;
+font-size: 16px;
+/* font-weight:bold; */
+/* color:#009000; */
+}
+
+.vklady_sum_2 {
+/* width:130px; */
+font-family: cuprum,sans-serif;
+font-size: 16px;
+font-weight:bold;
+/* color:#009000; */
+}
+
+.vklady_status_zam {
+/* width:105px; */
+font-family: cuprum, sans-serif;
+font-size: 16px;
+font-weight:bold;
+color: #000000;
+padding-left:30px;
+/* background:url('../images/vyvesti_stat_batch_1.png') no-repeat; */
+}
+
+.vklady_status_raz {
+/* width:105px; */
+font-family: cuprum, sans-serif;
+font-size: 16px;
+/* font-weight:bold; */
+color:#009000;
+/* padding-left:30px; */
+/* background:url('../images/vyvesti_stat_batch_2.png') no-repeat; */
+}
