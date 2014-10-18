@@ -1,0 +1,8 @@
+{$menu = $wa->lk->getMenu()}
+{if $wa->user()->getId() && $menu}
+
+            {foreach from=$menu item=r}
+                <tr class="memmenu" ><td>&nbsp;&nbsp;<a {if isset($r['active'])} class="selected" {/if} href="{$r['id']}">{$r['name']}</a></td></tr>
+            {/foreach}
+
+{/if}
