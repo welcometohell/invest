@@ -1,0 +1,31 @@
+{if $wa->user()->getId()}
+{if $wa->lk->isStart()<0}
+<p><a href="/lk/all/in" class="register">Сделать депозит</a>&nbsp;&nbsp;<!--a href="/lk/all/reinvest"  class="register">Сделать реинвест</a--></p>
+{else}
+<p><span class="register">Сделать депозит</span>&nbsp;&nbsp;<!--span  class="register">Сделать реинвест</span--></p>
+{/if}
+	<table class="table"> 
+		<th>Дата</th>
+		<th>Платежная система</th>
+		<th>Сумма</th>
+		<th>Тариф</th>
+                <th>Последнее начисление</th>
+                <th>Начислено</th>
+                <th>Следующее начисление</th>
+		<th>Статус</th>
+	{foreach from=$operations item=r}
+		{if $r['summ']}
+			<tr>
+				<td>{$r['date']|date_format:"%d.%m.%Y - %R"}</td>
+				<td>{if $r['merchant']==1}Perfect Money{/if}{if $r['merchant']==2}Liberty Reserve{/if}{if $r['merchant']==3}Реинвест{/if}</td>
+				<td>{if $r['type']==2 }{$r['summ']} USD{/if}</td>
+                                <td>{$r['tariff_name']}</td>
+                                <td>{$r['deposite_date']|date_format:"%d.%m.%Y - %R"}</td>
+				<td>{if $r['deposite_summ']}{$r['deposite_summ']} USD{/IF}</td>
+                                <td>{if !$r['deposite_summ']}{$r['deposite_next']|date_format:"%d.%m.%Y - %R"}{/if}</td>
+				<td>{if $r['deposite_summ']}Окончен{ELSE}Активен{/if}</td>
+			<tr>
+		{/if}
+	{/foreach}
+	</table>
+{/if}

@@ -1,0 +1,7 @@
+{if $wa->user()->getId() && $menu}
+        <ul class="menu-v">
+	{foreach from=$menu item=r}
+            <li {if $r['active']} class="selected" {/if}><a href="{$r['id']}">{$r['name']}</a></li>
+	{/foreach}
+        </ul>
+{/if}

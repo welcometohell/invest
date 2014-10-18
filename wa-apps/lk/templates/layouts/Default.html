@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>{$wa->title()|escape}</title>
+  <link href="/wa-data/public/site/themes/custom/custom.css?{$wa->version()}" rel="stylesheet" type="text/css"/>
+  <link href="/wa-data/public/site/themes/custom/fluid_grid.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="{$wa_url}wa-content/js/jquery/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="/wa-data/public/site/themes/custom/timer.js"></script>
+	{if $wa->isMobile()}
+		<link href="/wa-data/public/site/themes/custom/custom.mobile.css?{$wa->version()}" rel="stylesheet" type="text/css"/>
+		<meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1; user-scalable=0;" />
+        {else}
+        <script type="text/javascript" src="/wa-data/public/site/themes/custom/custom.js"></script>    
+	{/if}
+	{$wa->headJs()}
+</head>
+<body>
+    <div id="wa">
+    <div class="custom-margins">
+        <div class="container1 paper2">
+            <!-- HEADER -->
+	    <div id="header">
+		<div class="width_wrapper">
+		    <div class="container_12">
+              <div class="grid_2 alpha">&nbsp;</div>
+			<div class="grid_4">
+              <a href="/">
+                <img style="width: 357px; margin-left: -20px;" src="/wa-data/public/site/themes/custom/img/logo.png">
+              </a>
+            </div>
+			{if $wa->isAuthEnabled()}
+			    <!-- auth links -->
+			    {if $wa->user()->isAuth()}
+			    <div id="sing_login" class="grid_4 align-right">
+                  {if $wa_app_url=="/lk/"}
+				<span>Баланс: {$balance} USD, </span>
+				{/if}
+				<a href="/lk">{$wa->user('name')}</a>
+				<a href="?logout">[s`Log out`]</a>
+			    </div>
+			    {else}
+			    <div class="grid_4 align-right"  id="sing_login">
+				<a href="{$wa->loginUrl()}">Войти</a>
+				<a href="{$wa->signupUrl()}">Зарегестрироваться</a>
+			    </div>
+			    {/if}
+			{/if}
+             <div class="grid_2 omega">&nbsp;</div>
+			<div class="clear"></div>
+		    </div>
+		</div>
+	    </div>
+	    <div id="nav">
+		<div class="width_wrapper_nav">
+		    <div class="container_12">
+              <div class="grid_2 alpha">&nbsp;</div>
+			  <div class="grid_9">
+			    <ul id="wa-apps">
+				{foreach $wa->apps() as $a}
+                  <li{if $a.url|strpos:$page.parametr!==false and $page.parametr!='/'}  class="selected"{else}{if $wa_app_url|strpos:$a.url!==false and $a.url!='/'} class="selected" {/if}{/if} param="'{$a.url}'-'{$wa_app_url}'"><a href="{$a.url}">{$a.name}</a></li>
+				{/foreach}
+			    </ul>
+			  </div>
+              <div class="grid_1 omega">&nbsp;</div>
+              <div class="clear"></div> 
+		    </div>
+		</div>
+	    </div>
+       		<div id="main">
+				<div class="width_wrapper">
+		    		<div class="container_12">
+						{if $sidebar}
+						<div class="grid_9">
+			    			{$content}
+						</div>
+						<div class="grid_3" role="navigation">
+			    			{$sidebar}
+						</div>
+						{else}
+						<div class="grid_12">
+			    		{$content}
+						</div>
+						{/if}
+                      <div class="clear"></div>
+		    		</div>
+				</div>
+              <div class="clear"></div>
+            </div>
+          <div class="clear"></div>
+          <div id="foot_stripe">
+          	<div class="width_wrapper">
+            	<div class="container_12">
+                  	{$wa->block("foot_line")}
+              	</div>
+            </div>  
+          </div>
+        </div>
+      <div class="clear"></div>
+      <div id="footer">
+        <div class="width_wrapper">
+				<div class="container_12">
+                	<div class="grid_3 foot_summ alpha" >
+                      &nbsp;
+                    </div>
+                	<div class="grid_3 foot_summ" >
+				<img  src="/wa-data/public/site/themes/custom/img/perfect.png">
+                    </div>
+                	<div class="grid_3 foot_summ" >
+				<img  src="/wa-data/public/site/themes/custom/img/ddos.png">
+                    </div>
+                	<div class="grid_3 foot_summ omega" >
+				 <a href="skype:?chat&blob=ySvdsACv1zobEjs7s2EX6aKNhmxKggvO_EWnBgdo1zsd-07tNEoX44xN8pPBCZydxp1Rq46Qh_-sfUfQxYcLwrsixoESIXFwJKyJkC-y-OLH4u4DQL2k1ygMIJmO8XvijwY3GMvuLOigeceOCFHuXkHxD8oxlw_KXoUP29rQ7pKwqFdhju4_XnZ9uVGuixdtaRXw1tyEj1AfoOyPXQ"><img  src="/wa-data/public/site/themes/custom/img/skype.png" height="100px"></a>
+                    </div>
+                  <div class="clear"></div>
+              	</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

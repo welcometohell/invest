@@ -1,0 +1,36 @@
+{if $wa->user()->getId()}
+{if $error_all}
+    <p class="wa-error-msg" style="color: red">{$error_all}</p>
+{/if}
+{if is_array($tariff)}
+<div class="wa-form">
+    <form action="" method="POST" name="pre">
+    <div class="wa-field">
+        <div class="wa-name">Тариф вклада</div>
+        <div class="wa-value">
+            <select name="tariff">
+                {foreach from=$tariff item=r}
+                    <option {if $tariff_id == $r['id'] } selected {/if} value="{$r['id']}">{$r['name']}</option>
+                {/foreach}
+            </select>
+        </div>
+    </div>
+    <div class="wa-field">
+        <div class="wa-name">Сумма вклада</div>
+        <div class="wa-value">
+            <input {if $error || $error_all} class="wa-error" {/if} type="text" name="summ" value="{$summ}">
+            {if $error}
+            <em class="wa-error-msg">{$error}</em>
+            {/if}
+        </div>
+    </div>
+    <div class="wa-value wa-submit"><input type="submit" value="Сделать взнос"></div>
+    </form>
+</div>
+{/if}
+{else}
+<p>Вы должны сначала пройти простую <a href="/lk/signup">регистрацию в проекте</a>, прежде чем начать получать прибыль</p>
+{/if}
+
+
+

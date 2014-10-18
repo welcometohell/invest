@@ -1,0 +1,9 @@
+<div id="page" role="main">
+    {$wa->authAdapters()}
+    {$wa->loginForm($error, empty($without_form))}
+</div>
+{literal}
+<script>
+    $("body").addClass("bg-yellow");
+</script>
+{/literal}

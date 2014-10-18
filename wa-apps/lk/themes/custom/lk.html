@@ -1,0 +1,23 @@
+{if $wa->user()->getId() && is_array($records)}
+	<table class="table"> 
+		<th>Дата</th>
+		<th>Операция</th>
+		<th>Платежная система</th>
+		<th>Приход</th>
+		<th>Расход</th>
+		<th>Статус</th>
+	{foreach from=$records item=r}
+		{if $r['summ']}
+			<tr>
+				<td>{$r['timestamp']|date_format:"%d.%m.%Y - %R"}</td>
+				<td>{$r['type_name']}</td>
+				<td>{if $r['merchant']==1}Perfect Money{else}Liberty Reserve{/if}</td>
+				<td>{if $r['type']==1 || $r['type']==3}{$r['summ']}{/if}</td>
+				<td>{if $r['type']==2}{$r['summ']}{/if}</td>
+				<td>{$r['status']}</td>
+			<tr>
+		{/if}
+		</h4>
+	{/foreach}
+	</table>
+{/if}

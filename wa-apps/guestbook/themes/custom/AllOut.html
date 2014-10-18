@@ -1,0 +1,29 @@
+{if $wa->user()->getId()}
+    {if $error_all}
+        <p class="wa-error-msg" style="color: red">{$error_all}</p>
+    {/if}
+    {if !$error_all && !$ok}
+<div class="wa-form form"> 
+    <form action="" method="POST" name="payments">
+	<div class="wa-field">
+	    <div class="wa-name">Платежная система:</div>
+	    <div class="wa-value">
+		<select name="merchant">
+		    <option value="perfect">Perfect money</option>
+		</select>
+	    </div>
+	</div>
+	<div class="wa-field">
+	    <div class="wa-name">Сумма в USD для вывода:</div>
+	    <div class="wa-value">
+		<input type="text" name="summ">
+	    </div>
+	</div>
+	<input type="submit" name="submit" value="Вывести средства">
+    </form>
+ </div>
+    {/if}
+    {if $ok}
+	{$ok}
+    {/if}
+{/if}

@@ -1,0 +1,17 @@
+<div role="main">
+    {if !empty($confirmed_email)}
+        <p>[`You successfully confirmed email.`]</p>
+    {/if}
+    {if !empty($contact)}
+        <h1  class="title">[`Thank you!`]</h1>
+        <p>[`You have successfully signed up.`]</p>
+    {else}
+        {$wa->authAdapters()}
+        {$wa->signupForm($errors)}
+    {/if}
+</div>
+{literal}
+<script>
+    $("body").addClass("bg-blue");
+</script>
+{/literal}

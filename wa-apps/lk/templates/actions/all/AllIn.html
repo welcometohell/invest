@@ -1,0 +1,68 @@
+{if $wa->user()->getId()}
+{if $error_all}
+    <p class="wa-error-msg" style="color: red">{$error_all}</p>
+{/if}
+{if !$error && !$error_all}
+{if $perfect && $amount }
+<form action="https://perfectmoney.com/api/step1.asp" method="POST" name="auto">
+<input type="hidden" name="PAYEE_ACCOUNT" value="{$payee_account}">
+<input type="hidden" name="PAYEE_NAME" value="Депозит GoodNews">
+<input type="hidden" name="PAYMENT_ID" value="{$payment_id}">
+<input type="hidden" name="PAYMENT_AMOUNT" value="{$amount}">
+<input type="hidden" name="PAYMENT_UNITS" value="USD">
+<input type="hidden" name="STATUS_URL" value="{$wa->domainUrl()}/lk/pay/">
+<input type="hidden" name="PAYMENT_URL" value="{$wa->domainUrl()}/lk/pay/success">
+<input type="hidden" name="PAYMENT_URL_METHOD" value="POST">
+<input type="hidden" name="NOPAYMENT_URL" value="{$wa->domainUrl()}/lk/pay/fail">
+<input type="hidden" name="NOPAYMENT_URL_METHOD" value="POST">
+<input type="hidden" name="SUGGESTED_MEMO" value="">
+<input type="hidden" name="BAGGAGE_FIELDS" value="LOGIN">
+<input type="hidden" name="LOGIN" value="{$wa->user()->getLogin()}">
+<input type="submit" name="PAYMENT_METHOD" value="Сделать вклад с Perfect Money">
+</form>
+{/if}
+{if $liberty}
+
+{/if}
+{/if}
+{if !$liberty && !$perfect && is_array($tariff)}
+<p>Внимание! депозиты можно делать только с кошелька, указанного при регистрации!</p>
+<div class="wa-form">
+    <form action="" method="POST" name="pre">
+    <div class="wa-field">
+        <div class="wa-name">Платежная система</div>
+        <div class="wa-value">
+                <select name="merchant">
+                    <option {if $merchant == 1 } selected {/if} value="1">Perfect money</option>
+                </select>
+        </div>
+    </div>
+    <div class="wa-field">
+        <div class="wa-name">Тариф вклада</div>
+        <div class="wa-value">
+            <select name="tariff">
+                {foreach from=$tariff item=r}
+                    <option {if $tariff_id == $r['id'] } selected {/if} value="{$r['id']}">{$r['name']}</option>
+                {/foreach}
+            </select>
+        </div>
+    </div>
+    <div class="wa-field">
+        <div class="wa-name">Сумма вклада</div>
+        <div class="wa-value">
+            <input {if $error || $error_all} class="wa-error" {/if} type="text" name="summ" value="{$summ}">
+            {if $error}
+            <em class="wa-error-msg">{$error}</em>
+            {/if}
+        </div>
+    </div>
+    <div class="wa-value wa-submit"><input type="submit" value="Сделать взнос"></div>
+    </form>
+</div>
+{/if}
+{else}
+<p>Вы должны сначала пройти простую <a href="/lk/signup">регистрацию в проекте</a>, прежде чем начать получать прибыль</p>
+{/if}
+
+
+

@@ -1,0 +1,20 @@
+{if $wa->user()->getId()}
+{if $wa->lk->isStart()<0}
+<p><a href="/lk/all/in" class="register">Сделать депозит</a>&nbsp;&nbsp;<!--a href="/lk/all/reinvest"  class="register">Сделать реинвест</a--></p>
+{ELSE}
+<p><span class="register">Сделать депозит</span>&nbsp;&nbsp;<!--span  class="register">Сделать реинвест</span--></p>
+{/IF}
+	<table class="table"> 
+			<tr>
+				<td>Логин:</td><td>{$user->get("login")}</td>
+			<tr>
+			<tr>
+				<td>Кошелек Perfect:</td><td>{$user->get("perfect")}</td>
+			<tr>
+			<tr>
+				<td>E-mail:</td><td>{foreach from=$user->get("email") item=massiv_item}
+						    {$massiv_item.value}
+						    {/foreach}</td>
+			<tr>
+	</table>
+{/if}

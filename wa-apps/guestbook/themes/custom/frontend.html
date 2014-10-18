@@ -1,0 +1,27 @@
+{if $wa->user()->getId() && is_array($records)}
+{if $wa->lk->isStart()<0}
+<p><a href="/lk/all/in" class="register">Сделать депозит</a>&nbsp;&nbsp;<!--a href="/lk/all/reinvest"  class="register">Сделать реинвест</a--></p>
+{else}
+<p><span class="register">Сделать депозит</span>&nbsp;&nbsp;<!--span  class="register">Сделать реинвест</span--></p>
+{/if}
+	<table class="table"> 
+		<th>Дата</th>
+		<th>Операция</th>
+		<th>Платежная система</th>
+		<th>Приход</th>
+		<th>Расход</th>
+		<th>Статус</th>
+	{foreach from=$records item=r}
+		{if $r['summ']}
+			<tr>
+				<td>{$r['date']|date_format:"%d.%m.%Y - %R"}</td>
+				<td>{$r['type_name']}</td>
+				<td>{if $r['merchant']==1}Perfect Money{/if}{if $r['merchant']==2}Liberty Reserve{/if}{if $r['merchant']==3}Реинвест{/if}</td>
+				<td>{if $r['type']==1 || $r['type']==3}{$r['summ']} USD{/if}</td>
+				<td>{if $r['type']==2  || $r['type']==4}{$r['summ']} USD{/if}</td>
+				<td>{if $r['status']==0}Неудача{ELSEIF $r['status']==1}Успешно{ELSE}Auto{/if}</td>
+			<tr>
+		{/if}
+	{/foreach}
+	</table>
+{/if}

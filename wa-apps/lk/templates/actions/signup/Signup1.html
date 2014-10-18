@@ -1,0 +1,12 @@
+<div class="content">
+    <div id="page" role="main">
+        {if !empty($contact)}
+            <h1>Спасибо</h1>
+            <p>Вы успешно зарегестрировались</p>
+        {else}
+            <h1>Регистрация</h1>
+            {$wa->authAdapters()}
+            {$wa->signupForm($errors)}
+        {/if}
+    </div>
+</div> 

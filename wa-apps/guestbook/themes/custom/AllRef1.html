@@ -1,0 +1,23 @@
+{if $wa->user()->getId()}
+{if $wa->lk->isStart()<0}
+<p><a href="/lk/all/in" class="register">Сделать депозит</a>&nbsp;&nbsp;<!--a href="/lk/all/reinvest"  class="register">Сделать реинвест</a--></p>
+{else}
+<p><span class="register">Сделать депозит</span>&nbsp;&nbsp;<span  class="register">Сделать реинвест</span></p>
+{/if}
+    <p>Ваша ссылка для приглашения:</p>
+    <p><a href="{$host}/lk/?ref={$wa->user()->getId()}">{$host}/lk/?ref={$wa->user()->getId()}</a></p>
+	<p>Рекламные баннеры:</p>
+	<p>120x90: <img src="{$host}/wa-data/public/lk/themes/custom/img/banners/120-90_goodnews.bmp" width="100px" height=""></p>
+	<textarea cols="45" rows="5"><a href="{$host}/lk/?ref={$wa->user()->getId()}"><img src="{$host}/wa-data/public/lk/themes/custom/img/banners/120-90_goodnews.bmp" width="120px" height="90px"></a></textarea>
+	<p>240x400: <img src="{$host}/wa-data/public/lk/themes/custom/img/banners/240x400_goodnews.bmp" width="100px" ></p>
+	<textarea cols="45" rows="5"><a href="{$host}/lk/?ref={$wa->user()->getId()}"><img src="{$host}/wa-data/public/lk/themes/custom/img/banners/240x400_goodnews.bmp" width="240px" height="400px"></a></textarea>
+	<p>300x250: <img src="{$host}/wa-data/public/lk/themes/custom/img/banners/300x250_goodnews.bmp" width="100px" height=""></p>
+	<textarea cols="45" rows="5"><a href="{$host}/lk/?ref={$wa->user()->getId()}"><img src="{$host}/wa-data/public/lk/themes/custom/img/banners/300x250_goodnews.bmp" width="300px" height="250px"></a></textarea>
+    <p></p>
+	{if $referals}
+    <p>Логины приглашенных пользователей:</p>
+    {foreach from=$referals item=r}
+	<p>{$r}</p>
+    {/foreach}
+    {/if}
+{/IF}

@@ -1,0 +1,15 @@
+{if !empty($breadcrumbs)}
+    <div class="breadcrumbs"itemprop="breadcrumb">
+        {foreach $breadcrumbs as $breadcrumb}
+            <a href="{$breadcrumb.url}">{$breadcrumb.name|escape}</a> <span class="rarr">&rarr;</span>
+        {/foreach}
+    </div>
+{/if}
+{if $wa->currentUrl() == "/"}
+    {$page.content}
+{else}
+    <h1 itemprop="name">{$page.name}</h1>
+    <div id="page" role="main" itemprop="description">
+        {$page.content}
+    </div>
+{/if}

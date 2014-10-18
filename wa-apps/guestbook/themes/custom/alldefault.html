@@ -1,0 +1,27 @@
+{if $wa->user()->getId()}
+{if $wa->lk->isStart()<0}
+<p><a href="/lk/all/in" class="register  button">Сделать вклад</a>&nbsp;&nbsp;</p>
+{else}
+<p><span class="register button" >Сделать депозит</span></p>
+{/if}
+	<table class="table"> 
+		<th>Дата</th>
+		<th>Платежная система</th>
+                <th>Тип операции</th>
+		<th>Сумма</th>
+                <th>Процент</th>
+		<th>Статус</th>
+            {foreach from=$operations item=r}
+		{if $r['summ']}
+			<tr>
+				<td>{$r['date']|date_format:"%d.%m.%Y - %R"}</td>
+				<td>{$r['merchant_name']}</td>
+                                <td>{$r['operation_name']}</td>
+				<td>{$r['summ']} $</td>
+                                <td>{if $r['percent']}{$r['percent']}{/if}</td>
+				<td>{$r['status_name']}</td>
+			</tr>
+		{/if}
+            {/foreach}
+	</table>
+{/if}

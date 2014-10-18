@@ -1,0 +1,28 @@
+<h1>Отзывы</h1>
+<div>
+{foreach from=$records key=k item=r}
+    <div class="guestre">
+      <h5>{$r.name|escape}</h5>
+      <p>{$r.text|escape|nl2br}</p>
+    </div>
+{/foreach}
+{if $pages_count > 1}
+<ul class="menu-h">
+    {for $p=1 to $pages_count}
+    <li{if $p == $page} class="selected"{/if}><a href="{$url}{if $p > 1}{$p}/{/if}">{$p}</a></li>
+    {/for}
+</ul>
+{/if}
+</div>
+
+{if $wa->user()->getId()}
+<h2>Оставить свой отзыв:</h2>
+        <form method="post" class="form" action="">
+        Текст:<br />
+        <textarea rows="4" cols="70" name="text"></textarea><br /><br />
+        <input type="submit" value="Отправить на модерацию">
+	</form>
+        <p></p>
+{else}
+<p>Залогиньтесь чтобы оставить отзыв</p>
+{/if}
